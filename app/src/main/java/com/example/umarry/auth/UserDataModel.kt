@@ -1,7 +1,6 @@
 package com.example.umarry.auth
 
 data class UserDataModel (
-    var uid : String? = null,
     var name : String? = null,
     var nickname : String? = null,
     var age : String? = null,

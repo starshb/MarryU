@@ -35,16 +35,8 @@ class RegisterActivity:AppCompatActivity() {
             val email :String = binding.registerEmail.text.toString()
             val password : String = binding.registerPassword.text.toString()
             val uid = FirebaseAuthUtils.getUid()
-            val userModel = UserDataModel(
-                uid,
-                name,
-                nickname,
-                age,
-                phone,
-                birth,
-                email,
-                password
-            )
+
+
 
             if(email.isNotEmpty() && password.isNotEmpty()) {
                 // [START create_user_with_email]
@@ -52,8 +44,18 @@ class RegisterActivity:AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
+
                             val uid = FirebaseAuthUtils.getUid()
-                            FirebaseRef.memberRef.child(uid).setValue("")
+                            val userModel = UserDataModel(
+                                name,
+                                nickname,
+                                age,
+                                phone,
+                                birth,
+                                email,
+                                password
+                            )
+                            FirebaseRef.memberRef.child(uid).setValue(userModel)
 
                             Toast.makeText(this, "회원가입에 성공했습니다!", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this, MainActivity::class.java)) // activity 이동
