@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.umarry.auth.LoginActivity
+import com.example.umarry.cardstack.NewtodayActivity
 import com.example.umarry.utils.FirebaseAuthUtils
 
 class SplashActivity:AppCompatActivity() {
@@ -17,12 +18,12 @@ class SplashActivity:AppCompatActivity() {
         val uid = FirebaseAuthUtils.getUid()
 
         if( uid == "null") {
-            Log.d("xxxxxxxxxuid", uid)
+            Log.d("SPLASHxxxxxxxxxuid", uid)
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         } else {
-            Log.d("xxxxxxxxxuid", uid)
-            startActivity(Intent(this,MainActivity::class.java))
+            Log.d("SPLASHxxxxxxxxxuid", uid)
+            startActivity(Intent(this, NewtodayActivity::class.java))
             finish()
         }
 

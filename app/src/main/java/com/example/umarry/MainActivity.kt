@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val uid = FirebaseAuthUtils.getUid()
-        Log.d("xxxxx uid",uid)
+        Log.d("MAINxxxxx uid",uid)
 
 
 
