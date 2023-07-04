@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.umarry.MainActivity
 import com.example.umarry.R
+import com.example.umarry.cardstack.NewtodayActivity
 import com.example.umarry.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -39,12 +40,11 @@ class LoginActivity:AppCompatActivity(){
 
 
         binding.ToRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         binding.loginButton.setOnClickListener {
-            // todo db 연동 및 계정 인증
             var email = binding.loginEmail.text.toString()
             var password = binding.loginPassword.text.toString()
             if(email.isNotEmpty()&&password.isNotEmpty()) {
@@ -52,7 +52,7 @@ class LoginActivity:AppCompatActivity(){
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
-                            startActivity(Intent(this, MainActivity::class.java))
+                            startActivity(Intent(this, NewtodayActivity::class.java))
                             finish()
                         } else {
                             // If sign in fails, display a message to the user.
@@ -77,18 +77,18 @@ class LoginActivity:AppCompatActivity(){
         }
 
         binding.facebookBtn.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         binding.twitterBtn.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         // todo 계정찾기 페이지로 연결
         binding.Tofind.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
@@ -99,12 +99,13 @@ class LoginActivity:AppCompatActivity(){
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            reload()
         }
     }
 
+    //로그인페이지에서 벗어날 때 실행 됌. 왜지???
     override fun onDestroy() {
         super.onDestroy()
+        Log.d("LOGINACT","DESTORY EXE")
 //        firebaseAuthSignOut()
     }
 
@@ -146,11 +147,11 @@ class LoginActivity:AppCompatActivity(){
             }
     }
     private fun firebaseAuthSignOut() {
-        if(auth.currentUser != null)
+        if(auth.currentUser != null){
+            Log.d("SIGN OUT","singOut")
             Firebase.auth.signOut()
+        }
     }
 
 
-    private fun reload() {
-    }
 }

@@ -24,15 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-<!--        <View-->
-<!--            android:id="@+id/view"-->
-<!--            android:layout_width="210dp"-->
-<!--            android:layout_height="500dp"-->
-<!--            android:background="@drawable/ic_register_bg"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
         <androidx.cardview.widget.CardView
             android:id="@+id/l_cardView"
             android:layout_width="0dp"
@@ -52,12 +43,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="20dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter name"
+                android:hint="이름"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
+                android:inputType="textPersonName"/>
 
             <EditText
                 android:id="@+id/nickname"
@@ -66,27 +55,23 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="90dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter nickname"
+                android:hint="별명"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:inputType="text"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
+                android:inputType="text"/>
 
             <EditText
-                android:id="@+id/age"
+                android:id="@+id/gender"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="160dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter age"
+                android:hint="성별 (ex.남자)"
                 android:maxLines="1"
-                android:maxLength="3"
+                android:maxLength="2"
                 android:imeOptions="actionNext"
-                android:inputType="number"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/phone"
@@ -95,13 +80,11 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="230dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter phone number"
+                android:hint="전화번호"
                 android:maxLines="1"
                 android:maxLength="11"
                 android:imeOptions="actionNext"
-                android:inputType="phone"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
+                android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/birth"
@@ -110,14 +93,11 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="300dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter birth date(8)"
+                android:hint="생년월일 (ex. 2001-02-10)"
                 android:maxLines="1"
-                android:maxLength="8"
+                android:maxLength="10"
                 android:imeOptions="actionNext"
-                android:inputType="date"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
-
+                android:inputType="date"/>
 
             <EditText
                 android:id="@+id/register_email"
@@ -126,13 +106,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="370dp"
                 android:paddingLeft="20dp"
-                android:hint="Enter email"
+                android:hint="이메일"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:background="@drawable/radius_text"
-                app:layout_constraintTop_toTopOf="@+id/L_cardView"/>
-
+                android:inputType="textEmailAddress"/>
 
             <EditText
                 android:id="@+id/register_password"
@@ -141,24 +118,22 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="440dp"
                 android:layout_marginBottom="20dp"
-                android:hint="Enter password"
+                android:hint="비밀번호"
                 android:maxLines="1"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:longClickable="false"
                 android:paddingLeft="20dp"
-                android:background="@drawable/radius_text"
-                android:drawableRight="@drawable/baseline_visibility_24"
                 android:paddingRight="15dp"/>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signUp_button"
+            android:id="@+id/next_button"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/login_btn_bg"
-            android:text="Sign up"
+            android:text="Next"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
