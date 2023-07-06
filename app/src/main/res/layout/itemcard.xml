@@ -2,7 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="80dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +15,7 @@
         <ImageView
             android:id="@+id/itemimg"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="450dp"
             />
 
         <LinearLayout
@@ -95,7 +98,10 @@
                 android:textStyle="bold"
                 />
 
+
         </LinearLayout>
+
+
 
     </LinearLayout>
 
@@ -104,13 +110,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--이미지 수정-->
         <ImageView
             android:id="@+id/yes"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/google"
+            android:src="@drawable/good"
             />
 
     </FrameLayout>
@@ -120,15 +125,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--이미지 수정-->
         <ImageView
             android:id="@+id/no"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/twitter" />
+            android:src="@drawable/bad" />
 
     </FrameLayout>
-
 
 </androidx.cardview.widget.CardView>

@@ -3,6 +3,9 @@
     <style name="Base.Theme.Umarry" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/pink_100</item>
+        <item name="colorPrimaryVariant">@color/pink_300</item>
+        <item name="colorOnPrimary">@color/grey_700</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

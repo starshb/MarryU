@@ -23,7 +23,7 @@ class SplashActivity:AppCompatActivity() {
             finish()
         } else {
             Log.d("SPLASHxxxxxxxxxuid", uid)
-            startActivity(Intent(this, NewtodayActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
