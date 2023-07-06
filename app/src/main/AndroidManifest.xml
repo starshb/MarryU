@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,9 +17,10 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Main"/>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/splash">
             <intent-filter>
@@ -27,22 +29,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".auth.LoginActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
-        <activity android:name=".auth.RegisterActivity01"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
-        <activity android:name=".auth.RegisterActivity02"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
-        <activity android:name=".auth.RegisterActivity03"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
-        <activity android:name=".cardstack.NewtodayActivity"
-            android:exported="true">
-
-        </activity>
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".auth.RegisterActivity01"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".auth.RegisterActivity02"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".auth.RegisterActivity03"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".cardstack.NewtodayActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Main"/>
+        <activity
+            android:name=".setting.MyPageActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Main"/>
     </application>
 
 </manifest>

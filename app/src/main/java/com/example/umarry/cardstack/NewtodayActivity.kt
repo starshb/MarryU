@@ -1,9 +1,12 @@
 package com.example.umarry.cardstack
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.umarry.MainActivity
+import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.databinding.ActivityMainBinding
 import com.example.umarry.databinding.ActivityNewtodayBinding
@@ -26,7 +29,11 @@ class NewtodayActivity:AppCompatActivity() {
         binding = ActivityNewtodayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setTitle("매칭")
         val cardStackView = binding.cardstackview
+
+
+//        binding.bottomNavBar.bringToFront()
 
         manager = CardStackLayoutManager(baseContext, object : CardStackListener{
             override fun onCardDragging(direction: Direction?, ratio: Float) {
@@ -62,6 +69,7 @@ class NewtodayActivity:AppCompatActivity() {
         cardStackView.adapter = newtodayAdapter
 
         getUserDataList()
+        setUpTabBar()
     }
 
     private fun getUserDataList(){
@@ -85,5 +93,29 @@ class NewtodayActivity:AppCompatActivity() {
         }
         FirebaseRef.memberRef.addValueEventListener(postListener) // 데이터 가져올 경로.addValue~  , post = 가져올 곳 ??
 
+    }
+
+    private fun setUpTabBar() {
+        binding.bottomNavBar.setOnItemSelectedListener {
+            when (it) {
+                R.id.nav_news -> {
+//                    binding.textMain.text = "Near"
+                }
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+//                    binding.textMain.text = "Chat"
+                }
+                R.id.nav_matching -> {
+                    startActivity(Intent(this,NewtodayActivity::class.java))
+//                    binding.textMain.text = "Profile"
+//                     binding.bottomNavBar.showBadge(R.id.nav_settings)
+                }
+
+                R.id.nav_store -> {
+//                    binding.textMain.text = "Settings"
+//                     binding.bottomNavBar.dismissBadge(R.id.nav_settings)
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/chat_icon"
+        android:title="Neaws"
+        app:cnb_iconColor="#2196F3"
+        />
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_icon"
+        android:title="Home"
+        app:cnb_iconColor="@color/pink_300"/>
+
+    <item
+        android:id="@+id/nav_matching"
+        android:icon="@drawable/person_icon"
+        android:title="Matching"
+        app:cnb_iconColor="#4CAF50"/>
+
+    <item
+        android:id="@+id/nav_store"
+        android:icon="@drawable/store_icon"
+        android:title="Store"
+        app:cnb_iconColor="#FF9800"/>
+
+</menu>

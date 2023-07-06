@@ -5,8 +5,16 @@
         <item name="colorPrimary">@color/pink_100</item>
         <item name="colorPrimaryVariant">@color/pink_300</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/grey_700</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    
+    <style name="Theme.Main" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/pink_100</item>
+        <item name="colorPrimaryVariant">@color/pink_300</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="windowActionBar">true</item>
     </style>
 
     <style name="Theme.Umarry" parent="Base.Theme.Umarry" />
