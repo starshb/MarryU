@@ -40,7 +40,7 @@ class LoginActivity:AppCompatActivity(){
 
 
         binding.ToRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
@@ -77,18 +77,18 @@ class LoginActivity:AppCompatActivity(){
         }
 
         binding.facebookBtn.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         binding.twitterBtn.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         // todo 계정찾기 페이지로 연결
         binding.Tofind.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity01::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
@@ -99,7 +99,6 @@ class LoginActivity:AppCompatActivity(){
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            reload()
         }
     }
 
@@ -155,6 +154,4 @@ class LoginActivity:AppCompatActivity(){
     }
 
 
-    private fun reload() {
-    }
 }
