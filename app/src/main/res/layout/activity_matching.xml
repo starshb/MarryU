@@ -6,6 +6,10 @@
     android:theme="@style/Theme.Main"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <include
+        android:id="@+id/tb_matching"
+        layout="@layout/toolbar"/>
+
     <com.yuyakaido.android.cardstackview.CardStackView
         android:id="@+id/cardstackview"
         android:layout_width="match_parent"

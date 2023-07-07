@@ -16,10 +16,6 @@
         android:theme="@style/Theme.Umarry"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Main"/>
-        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/splash">
@@ -29,6 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".setting.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".auth.LoginActivity"
             android:exported="true"
@@ -46,13 +48,12 @@
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".cardstack.NewtodayActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Main"/>
+            android:name=".cardstack.MatchingActivity"
+            android:exported="true"/>
         <activity
             android:name=".setting.MyPageActivity"
             android:exported="true"
-            android:theme="@style/Theme.Main"/>
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>

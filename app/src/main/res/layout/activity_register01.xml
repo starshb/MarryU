@@ -93,7 +93,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="300dp"
                 android:paddingLeft="20dp"
-                android:hint="생년월일 (ex. 2001-02-10)"
+                android:hint="생년월일 (8글자)"
                 android:maxLines="1"
                 android:maxLength="10"
                 android:imeOptions="actionNext"

@@ -3,16 +3,17 @@ package com.example.umarry
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
-import com.example.umarry.cardstack.NewtodayActivity
-import com.example.umarry.cardstack.NewtodayAdapter
+import com.example.umarry.cardstack.MatchingActivity
 import com.example.umarry.databinding.ActivityMainBinding
+import com.example.umarry.setting.SettingActivity
 import com.example.umarry.utils.FirebaseAuthUtils
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.yuyakaido.android.cardstackview.CardStackLayoutManager
- //전화번호, 이메일 유니크
+
+//전화번호, 이메일 유니크
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +32,15 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
+        binding.tbMain.tbMypage.setOnClickListener {
+            startActivity(Intent(this, SettingActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+        }
+
         val uid = FirebaseAuthUtils.getUid()
         Log.d("MAINxxxxx uid",uid)
 
+        binding.bottomNavBar.setItemSelected(R.id.nav_home,true)
         setUpTabBar()
 
 
@@ -44,10 +51,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_news -> binding.textMain.text = "Near"
                 R.id.nav_home -> {
                     startActivity(Intent(this,MainActivity::class.java))
+
                     binding.textMain.text = "Chat"
                 }
                 R.id.nav_matching -> {
-                    startActivity(Intent(this,NewtodayActivity::class.java))
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        startActivity(Intent(this,MatchingActivity::class.java))
+                    },300)
+
+//                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
                     binding.textMain.text = "Profile"
 //                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }

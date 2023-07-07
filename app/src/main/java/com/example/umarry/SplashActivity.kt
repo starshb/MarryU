@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.umarry.auth.LoginActivity
-import com.example.umarry.cardstack.NewtodayActivity
 import com.example.umarry.utils.FirebaseAuthUtils
 
 class SplashActivity:AppCompatActivity() {

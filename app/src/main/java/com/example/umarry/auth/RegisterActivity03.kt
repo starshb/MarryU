@@ -94,6 +94,7 @@ class RegisterActivity03 : AppCompatActivity() {
 
                             val uid = FirebaseAuthUtils.getUid()
                             val userModel = UserDataModel(
+                                uid,
                                 name,
                                 nickname,
                                 gender,
@@ -132,9 +133,6 @@ class RegisterActivity03 : AppCompatActivity() {
         binding.registerHeader.setOnClickListener {
             onBackPressed()
         }
-
-
-
 
     }
 
