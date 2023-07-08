@@ -6,7 +6,7 @@ MarryU 로고 로 만든 Splash Screen 제작
 <br>
 <br>
 <div>MarrU Splash</div>
-![1](https://github.com/ssuca/MarryU/assets/99107888/c18cfb03-b722-45a6-a086-27f96eef4050)
+![1](https://github.com/starshb/MarryU/assets/99107888/c18cfb03-b722-45a6-a086-27f96eef4050)
 
 <hr>
 UI 구현 <br>
