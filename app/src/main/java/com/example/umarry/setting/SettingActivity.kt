@@ -17,13 +17,13 @@ import com.google.firebase.ktx.Firebase
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySettingBinding
-    private lateinit var tbinding:ToolbarBinding
+//    private lateinit var tbinding:ToolbarBinding
     private lateinit var auth :FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
-        tbinding = binding.tbSetting
+//        tbinding = binding.tbSetting
         auth = Firebase.auth
 
         setContentView(binding.root)
@@ -47,8 +47,8 @@ class SettingActivity : AppCompatActivity() {
             }
 
         }
-        tbinding.tbTitle.text  = "<"
-        tbinding.tbTitle.setOnClickListener {
+        binding.tbTitle.text  = "<"
+        binding.tbTitle.setOnClickListener {
             onBackPressed()
             overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }

@@ -25,18 +25,25 @@ import java.time.format.DateTimeFormatter
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyPageBinding
-    private lateinit var tbinding: ToolbarBinding
+//    private lateinit var tbinding: ToolbarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyPageBinding.inflate(layoutInflater)
-        tbinding = binding.tbPage
+//        tbinding = binding.tbPage
         setContentView(binding.root)
 
-        tbinding.tbMypage.visibility = View.GONE
-        tbinding.tbChatting.visibility = View.GONE
-        tbinding.tbTitle.text  = "<"
-//        tbinding.tbTitle.setOnClickListener {
+        binding.tbMypage.visibility = View.GONE
+        binding.tbChatting.visibility = View.GONE
+        binding.tbTitle.text  = "<"
+        binding.tbTitle.setOnClickListener {
+            onBackPressed()
+            overridePendingTransition(com.example.umarry.R.anim.slide_from_left, com.example.umarry.R.anim.slide_to_right)
+        }
+//        binding.tbTitle.setOnClickListener {
+//            Log.e("xxxxxxxxxxxxxxxxxx","클릭했음")
 //            onBackPressed()
+//            Log.e("xxxxxxxxxxxxxxxxxx","클릭됐음")
+//
 //            overridePendingTransition(com.example.umarry.R.anim.slide_from_left, com.example.umarry.R.anim.slide_to_right)
 //        }
 
@@ -51,6 +58,7 @@ class MyPageActivity : AppCompatActivity() {
         val myArea = binding.myArea
         val myGender = binding.myGender
         val myImg = binding.myImage
+        val myJob = binding.myJob
 
 
         val postListener = object : ValueEventListener {
@@ -69,6 +77,7 @@ class MyPageActivity : AppCompatActivity() {
                 myAge.text = (formatted.toInt()-data.birth!!.substring(0,4).toInt()).toString()
                 myArea.text = data!!.bigArea +" "+ data!!.smallArea
                 myGender.text = data!!.gender
+                myJob.text = data!!.job
 
                 // mypage여서 현재 사용자의 uid를 get
                 val storageRef = Firebase.storage.reference.child(uid).child("01.png")

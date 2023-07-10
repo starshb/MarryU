@@ -7,9 +7,47 @@
     tools:context=".setting.SettingActivity"
     >
 
-    <include
-    android:id="@+id/tb_setting"
-    layout="@layout/toolbar" />
+<!--    <include-->
+<!--    android:id="@+id/tb_setting"-->
+<!--    layout="@layout/toolbar" />-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink_100"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/tb_mypage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/tb_chatting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chatting"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tb_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,6 +71,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="My Matching List"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/secondAuth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Second Auth"
             android:textSize="18sp"
             android:layout_marginBottom="10dp"/>
 

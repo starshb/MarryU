@@ -27,7 +27,10 @@
 
     <include
         android:id="@+id/tb_main"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
 
     <TextView
         android:id="@+id/text_main"
@@ -37,6 +40,120 @@
         android:text="Welcome!"
         android:textColor="@color/black"
         android:textSize="20sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fabConstraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        android:layout_above="@id/bottom_nav_bar"
+        android:layout_alignEnd="@id/bottom_nav_bar">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mainFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/pink_300"
+            android:tint="@color/pink_100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_add_24"
+            app:tint="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chatbotFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/pink_300"
+            android:tint="@color/pink_300"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/mainFabBtn"
+            app:layout_constraintEnd_toEndOf="@id/mainFabBtn"
+            app:srcCompat="@drawable/robot_icon"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/chatbotTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_text"
+            android:elevation="8dp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="8dp"
+            android:text="chatbot"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/chatbotFabBtn"
+            app:layout_constraintEnd_toStartOf="@id/chatbotFabBtn"
+            app:layout_constraintTop_toTopOf="@id/chatbotFabBtn" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/settingFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/pink_300"
+            android:tint="@color/pink_300"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/chatbotFabBtn"
+            app:layout_constraintEnd_toEndOf="@id/chatbotFabBtn"
+            app:srcCompat="@drawable/settings_icon"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/settingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_text"
+            android:elevation="8dp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="8dp"
+            android:text="setting"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/settingFabBtn"
+            app:layout_constraintEnd_toStartOf="@id/settingFabBtn"
+            app:layout_constraintTop_toTopOf="@id/settingFabBtn" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/callFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/pink_300"
+            android:tint="@color/pink_300"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/settingFabBtn"
+            app:layout_constraintEnd_toEndOf="@id/settingFabBtn"
+            app:srcCompat="@drawable/call_icon"
+
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/callTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_text"
+            android:elevation="8dp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="8dp"
+            android:text="voice talk"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/callFabBtn"
+            app:layout_constraintEnd_toStartOf="@id/callFabBtn"
+            app:layout_constraintTop_toTopOf="@id/callFabBtn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottom_nav_bar"
@@ -51,23 +168,3 @@
         app:cnb_menuResource="@menu/nav_menu" />
 
 </RelativeLayout>
-
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".MainActivity">-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/signOut"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
