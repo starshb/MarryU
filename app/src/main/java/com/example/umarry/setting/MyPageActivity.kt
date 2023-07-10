@@ -6,13 +6,14 @@ import android.os.Build.VERSION_CODES.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
-import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
-import com.example.umarry.databinding.ActivityMyPageBinding
 import com.example.umarry.utils.FirebaseAuthUtils
 import com.example.umarry.utils.FirebaseRef
+import com.example.umarry.databinding.ActivityMyPageBinding
+import com.example.umarry.databinding.ToolbarBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -24,11 +25,20 @@ import java.time.format.DateTimeFormatter
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyPageBinding
+    private lateinit var tbinding: ToolbarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyPageBinding.inflate(layoutInflater)
+        tbinding = binding.tbPage
         setContentView(binding.root)
 
+        tbinding.tbMypage.visibility = View.GONE
+        tbinding.tbChatting.visibility = View.GONE
+        tbinding.tbTitle.text  = "<"
+//        tbinding.tbTitle.setOnClickListener {
+//            onBackPressed()
+//            overridePendingTransition(com.example.umarry.R.anim.slide_from_left, com.example.umarry.R.anim.slide_to_right)
+//        }
 
         getMyData()
     }

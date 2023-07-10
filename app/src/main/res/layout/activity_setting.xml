@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".setting.SettingActivity"
-    android:layout_margin="20dp"
-    android:orientation="vertical">
+    >
 
     <include
-        android:id="@+id/tb_setting"
-        layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/myPageBtn"
+    android:id="@+id/tb_setting"
+    layout="@layout/toolbar" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MyPage"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        >
 
-    <Button
-        android:id="@+id/SignOutBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LogOut"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/myPageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MyPage"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/myLikeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Matching List"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/SignOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LogOut"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
 
 
-</LinearLayout>
+
+
+
+</RelativeLayout>

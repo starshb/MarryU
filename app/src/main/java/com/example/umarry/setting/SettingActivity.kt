@@ -9,23 +9,32 @@ import android.widget.Toast
 import com.example.umarry.R
 import com.example.umarry.auth.LoginActivity
 import com.example.umarry.databinding.ActivitySettingBinding
+import com.example.umarry.databinding.ToolbarBinding
+import com.example.umarry.message.MyLikeListActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySettingBinding
+    private lateinit var tbinding:ToolbarBinding
     private lateinit var auth :FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
+        tbinding = binding.tbSetting
         auth = Firebase.auth
 
         setContentView(binding.root)
 
         binding.myPageBtn.setOnClickListener {
             startActivity(Intent(this,MyPageActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+        }
+        binding.myLikeList.setOnClickListener {
+            startActivity(Intent(this,MyLikeListActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
         binding.SignOutBtn.setOnClickListener {
             if(auth.currentUser !=null){
@@ -37,7 +46,11 @@ class SettingActivity : AppCompatActivity() {
 
             }
 
-
+        }
+        tbinding.tbTitle.text  = "<"
+        tbinding.tbTitle.setOnClickListener {
+            onBackPressed()
+            overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }
     }
 }

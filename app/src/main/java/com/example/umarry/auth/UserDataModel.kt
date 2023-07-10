@@ -15,5 +15,6 @@ data class UserDataModel(
     var bigArea: String? = null,
     var smallArea: String? = null,
     var yStature: String? = null,
-    var yAbility: String? = null
+    var yAbility: String? = null,
+    val token:String? = null
 )

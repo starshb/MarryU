@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginHorizontal="20dp"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="80dp"
     android:layout_marginBottom="80dp"
     >
 
@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/itemimg"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="380dp"
             />
 
         <LinearLayout
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="닉네임"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="회원닉네임"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="나이"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:text="회원나이"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="지역"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="대지역"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:text="소지역"
                 android:layout_margin="5dp"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 />
 

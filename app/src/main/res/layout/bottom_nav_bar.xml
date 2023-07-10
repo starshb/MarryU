@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.Main"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <include
-        android:id="@+id/tb_matching"
-        layout="@layout/toolbar"/>
-
-    <com.yuyakaido.android.cardstackview.CardStackView
-        android:id="@+id/cardstackview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottom_nav_bar"
@@ -26,7 +15,5 @@
         android:background="@color/white"
         android:fadingEdge="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:cnb_menuResource="@menu/nav_menu"
-        tools:ignore="MissingConstraints" />
-
+        app:cnb_menuResource="@menu/nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
