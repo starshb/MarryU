@@ -8,9 +8,48 @@
     android:fillViewport="true"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/tb_page"
-        layout="@layout/toolbar"/>
+<!--    <include-->
+<!--        android:id="@+id/tb_page"-->
+<!--        layout="@layout/toolbar"/>-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink_100"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/tb_mypage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/tb_chatting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chatting"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tb_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:id="@+id/mybody"
@@ -39,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
                 <TextView
@@ -47,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
             </LinearLayout>
@@ -59,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nickname"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
                 <TextView
@@ -67,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
             </LinearLayout>
@@ -79,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Age"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
                 <TextView
@@ -87,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
             </LinearLayout>
@@ -99,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Area"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
                 <TextView
@@ -107,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
             </LinearLayout>
@@ -119,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gender"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
                 <TextView
@@ -127,7 +166,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="35sp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:id="@+id/myJob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_margin="10dp"/>
             </LinearLayout>
