@@ -8,5 +8,6 @@ class FirebaseRef {
         val database = Firebase.database
 
         val memberRef = database.getReference("member")
+        val memberLikeRef = database.getReference("like")
     }
 }

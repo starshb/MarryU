@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,10 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Umarry"
         tools:targetApi="31">
+        <service
+            android:name=".message.fcm.FirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Main"/>
+            android:name=".message.MyLikeListActivity"
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -29,6 +37,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".setting.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".auth.LoginActivity"
             android:exported="true"
@@ -46,13 +60,12 @@
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".cardstack.NewtodayActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Main"/>
+            android:name=".cardstack.MatchingActivity"
+            android:exported="true" />
         <activity
             android:name=".setting.MyPageActivity"
             android:exported="true"
-            android:theme="@style/Theme.Main"/>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

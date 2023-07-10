@@ -20,16 +20,16 @@ import com.google.firebase.storage.ktx.storage
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class NewtodayAdapter(val context: Context, val items: MutableList<UserDataModel>) :
-    RecyclerView.Adapter<NewtodayAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewtodayAdapter.ViewHolder {
+class MatchingAdapter(val context: Context, val items: MutableList<UserDataModel>) :
+    RecyclerView.Adapter<MatchingAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchingAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view :View =  inflater.inflate(R.layout.itemcard, parent, false)
         return ViewHolder(view)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onBindViewHolder(holder : NewtodayAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder : MatchingAdapter.ViewHolder, position: Int) {
         holder.binding(items[position]) // 어댑터 ViewHolder의 binding 함수를 실행하여 UserDataModel item 홀딩함
     }
 
@@ -54,12 +54,13 @@ class NewtodayAdapter(val context: Context, val items: MutableList<UserDataModel
         val uid = FirebaseAuthUtils.getUid()
 
 
-        //데이터와 요소 바인딩
+        //데이터와 요소 바인딩꼬부Rhqnrl
         // todo 나이 디테일한 설정 안됐음
         @RequiresApi(Build.VERSION_CODES.O)
         fun binding(data : UserDataModel) {
 
-            val storageRef = Firebase.storage.reference.child(uid).child("01.png")
+            // storage 에서 이미지 불러오기 의 child를 현재 접속이 아닌 datamodel의 uid를 끌어다 시도
+            val storageRef = Firebase.storage.reference.child(data.uid!!).child("01.png")
             storageRef.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
                 if(task.isSuccessful){
                     Glide.with(context)

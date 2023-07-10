@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.umarry.MainActivity
 import com.example.umarry.R
-import com.example.umarry.cardstack.NewtodayActivity
 import com.example.umarry.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -52,7 +51,7 @@ class LoginActivity:AppCompatActivity(){
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
-                            startActivity(Intent(this, NewtodayActivity::class.java))
+                            startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         } else {
                             // If sign in fails, display a message to the user.

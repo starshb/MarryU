@@ -1,6 +1,7 @@
 package com.example.umarry.auth
 
 data class UserDataModel(
+    val uid: String? = null,
     var name: String? = null,
     var nickname: String? = null,
     var gender: String? = null,
@@ -14,5 +15,6 @@ data class UserDataModel(
     var bigArea: String? = null,
     var smallArea: String? = null,
     var yStature: String? = null,
-    var yAbility: String? = null
+    var yAbility: String? = null,
+    val token:String? = null
 )

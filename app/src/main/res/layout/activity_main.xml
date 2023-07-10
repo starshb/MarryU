@@ -5,10 +5,29 @@
     android:id="@+id/rl_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
     tools:context=".MainActivity">
 
     <!--a-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/tb"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/pink_100"-->
+<!--        >-->
+<!--        <ImageView-->
+<!--            android:id="@+id/tb_mypage"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_person"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:padding="10dp"-->
+<!--            app:tint="@color/white" />-->
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+    <include
+        android:id="@+id/tb_main"
+        layout="@layout/toolbar"/>
 
     <TextView
         android:id="@+id/text_main"
@@ -17,7 +36,7 @@
         android:layout_centerInParent="true"
         android:text="Welcome!"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottom_nav_bar"
