@@ -15,7 +15,6 @@ Login & Membership <br>
 Bio <br>
 Retrofit2 <br>
 Google Login <br>
-Kakao Login <br>
 Firebase <br>
 Docker & Jenkins
 
