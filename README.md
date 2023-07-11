@@ -11,14 +11,7 @@ MarryU 로고 로 만든 Splash Screen 제작
 
 <br>
 <br>
-<br>
-<br>
-<br>
 
-override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        val uid = auth.currentUser?.uid.toString()
-        val uid = FirebaseAuthUtils.getUid()
 
         if( uid == "null") {
             Log.d("SPLASHxxxxxxxxxuid", uid)
