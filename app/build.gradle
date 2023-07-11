@@ -39,7 +39,6 @@ android {
 
 dependencies {
 
-
     /*firebase 연동*/
     implementation 'com.google.firebase:firebase-analytics-ktx'  // 기본 세팅
     implementation platform('com.google.firebase:firebase-bom:32.1.1') // 기본세팅
