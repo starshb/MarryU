@@ -9,6 +9,29 @@ MarryU 로고 로 만든 Splash Screen 제작
 <br>
 <img width="30%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/d450b5e4-cada-43e3-bd13-b2e44e069f46"/>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+//        val uid = auth.currentUser?.uid.toString()
+        val uid = FirebaseAuthUtils.getUid()
+
+        if( uid == "null") {
+            Log.d("SPLASHxxxxxxxxxuid", uid)
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        } else {
+            Log.d("SPLASHxxxxxxxxxuid", uid)
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+    }
+
 <hr>
 UI 구현 <br>
 Login & Membership <br>
