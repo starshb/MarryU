@@ -6,8 +6,9 @@ MarryU 로고 로 만든 Splash Screen 제작
 <br>
 <br>
 <div>MarrU Splash</div>
-![1](https://github.com/gksgpwls0306/umarry/assets/138543543/d450b5e4-cada-43e3-bd13-b2e44e069f46)
-
+<br>
+<br>
+<img width="50%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/d450b5e4-cada-43e3-bd13-b2e44e069f46"/>
 
 <hr>
 UI 구현 <br>
@@ -21,12 +22,16 @@ Docker & Jenkins
 
 <hr>
 Docker & Jenkins <br>
-![docker02](https://github.com/gksgpwls0306/umarry/assets/138543543/3c29309b-6b47-4470-88ca-63e1de51643a)
+<br>
+<br>
+<img width="50%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/3c29309b-6b47-4470-88ca-63e1de51643a"/>
 
 
 <hr>
 FlingerPrint <br>
-![2](https://github.com/gksgpwls0306/umarry/assets/138543543/8a21c2de-e72d-44f5-bfa3-53832a485136)
+<br>
+<br>
+<img width="50%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/8a21c2de-e72d-44f5-bfa3-53832a485136"/>
 
 
 
