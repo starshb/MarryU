@@ -14,11 +14,9 @@ MarryU 로고 로 만든 Splash Screen 제작
 
 
         if( uid == "null") {
-            Log.d("SPLASHxxxxxxxxxuid", uid)
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         } else {
-            Log.d("SPLASHxxxxxxxxxuid", uid)
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
