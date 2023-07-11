@@ -15,8 +15,9 @@ Login & Membership <br>
 Bio <br>
 Retrofit2 <br>
 Google Login <br>
-NFC & QR <br>
+Kakao Login <br>
 Firebase <br>
+Docker & Jenkins
 
 
 <hr>
