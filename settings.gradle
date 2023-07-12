@@ -11,7 +11,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // cardstackview
-        maven { url 'https://jitpack.io' } //cardstackview
+        maven { url 'https://jitpack.io' } //cardstackview , image slider
     }
 }
 rootProject.name = "umarry"
