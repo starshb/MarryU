@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/pink_100</item>
         <item name="colorPrimaryVariant">@color/pink_300</item>
         <item name="colorOnPrimary">@color/grey_700</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
