@@ -16,6 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Umarry"
         tools:targetApi="31">
+        <activity
+            android:name=".chat.ChatListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".chat.detail.ChatActivity"
+            android:exported="true" />
+
         <service
             android:name=".message.fcm.FirebaseService"
             android:exported="false">

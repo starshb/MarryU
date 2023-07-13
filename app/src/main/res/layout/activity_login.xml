@@ -143,11 +143,11 @@
                 android:id="@+id/facebook_btn"
                 android:src="@drawable/fb"/>
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:layout_margin="20dp"
                 android:id="@+id/twitter_btn"
-                android:src="@drawable/twitter"/>
+                android:src="@drawable/kakao"/>
 
         </LinearLayout>
 

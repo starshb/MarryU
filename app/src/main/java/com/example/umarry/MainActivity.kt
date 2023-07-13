@@ -17,6 +17,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.cardstack.MatchingActivity
+import com.example.umarry.chat.ChatListActivity
 import com.example.umarry.databinding.ActivityMainBinding
 import com.example.umarry.databinding.ToolbarBinding
 import com.example.umarry.recycler.RecyclerView01Adapter
@@ -91,6 +92,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.tbMypage.setOnClickListener {
             startActivity(Intent(this, SettingActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+        }
+
+        binding.tbChatting.setOnClickListener {
+            startActivity(Intent(this, ChatListActivity::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
