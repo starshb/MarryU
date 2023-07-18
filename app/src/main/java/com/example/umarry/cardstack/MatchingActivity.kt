@@ -214,9 +214,9 @@ class MatchingActivity:AppCompatActivity() {
     private fun setUpTabBar() {
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it) {
-                R.id.nav_news -> {
-//                    binding.textMain.text = "Near"
-                }
+//                R.id.nav_news -> {
+////                    binding.textMain.text = "Near"
+//                }
                 R.id.nav_home -> {
                     Handler(Looper.getMainLooper()).postDelayed({
                         startActivity(Intent(this, MainActivity::class.java))

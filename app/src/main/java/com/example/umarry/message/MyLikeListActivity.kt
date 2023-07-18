@@ -55,6 +55,8 @@ class MyLikeListActivity : AppCompatActivity() {
                 if (dataSnapshot.children.count() == 0){
                     Toast.makeText(this@MyLikeListActivity,"매칭이 되지 않았습니다.",Toast.LENGTH_SHORT).show()
                 }else {
+                    //todo for문으로 리스트 돌때마다 매칭유무 모두 메시지뜨는거 고치기
+
                     for(dataModel in dataSnapshot.children){
                         val likeUserKey = dataModel.key.toString()
                         if(likeUserKey.equals(uid)){

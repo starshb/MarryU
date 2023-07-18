@@ -2,16 +2,20 @@ package com.example.umarry
 
 import android.content.Intent
 import android.graphics.Rect
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
@@ -181,8 +185,11 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 if(userDataList02 == null){
-                    val textV = findViewById<TextView>(R.id.rcv02_nickname)
-                    textV.text = "가까운 회원이 없습니다"
+                    Log.d("xxxxxxxmain_rcv02_null","rcv02Null")
+                    val notext = findViewById<TextView>(R.id.rcv02_notext)
+                    val rcv02 = findViewById<ImageView>(R.id.rcv02)
+                    notext.visibility = View.VISIBLE
+                    rcv02.visibility = View.GONE
                     // todo 같은 동네 친구가 검색 되지 않을 경우 처리
                 }
                 rcv02Adapter.notifyDataSetChanged()
@@ -196,24 +203,6 @@ class MainActivity : AppCompatActivity() {
         }
         FirebaseRef.memberRef.addValueEventListener(postListener) // 데이터 가져올 경로.addValue~  , post = 가져올 곳 ??
     }
-
-//    private fun getUserDataListALl(currentUserGender: String){
-//        val postListener = object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                for(dataModel in dataSnapshot.children){
-//                    val user = dataModel.getValue(UserDataModel::class.java)
-//                    userDataList01.add(user!!)
-//                }
-//                rcv03Adapter.notifyDataSetChanged()
-//            }
-//
-//            override fun onCancelled(databaseError: DatabaseError) {
-//                // Getting Post failed, log a message
-//                Log.w("xxxxxx userdata", "loadPost:onCancelled", databaseError.toException())
-//            }
-//        }
-//        FirebaseRef.memberRef.addValueEventListener(postListener) // 데이터 가져올 경로.addValue~  , post = 가져올 곳 ??
-//    }
 
     private fun getMyData(){
 
@@ -240,7 +229,7 @@ class MainActivity : AppCompatActivity() {
 
     /*-------------floating button*/
     private fun onchatbotClicked() {
-        Toast.makeText(this, "Gallery Clicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Chatbot Clicked", Toast.LENGTH_SHORT).show()
     }
 
     private fun shrinkFab() {
@@ -291,11 +280,12 @@ class MainActivity : AppCompatActivity() {
     private fun setUpTabBar() {
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it) {
-                R.id.nav_news ->{
-//                    binding.textMain.text = "Near"
-                }
+//                R.id.nav_news ->{
+////                    binding.textMain.text = "Near"
+//                }
                 R.id.nav_home -> {
                     startActivity(Intent(this,MainActivity::class.java))
+//                    return@setOnItemSelectedListener true
 //                    binding.textMain.text = "Chat"
                 }
 
