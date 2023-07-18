@@ -1,24 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".chat.ChatListActivity">
 
-    <include
-        android:id="@+id/tb"
-        layout="@layout/toolbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/pink_100"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_arror"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tb_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tb_mypage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@drawable/person_icon"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:padding="10dp" />
+    </LinearLayout>
+
+<!--    <include-->
+<!--        android:id="@+id/tb"-->
+<!--        layout="@layout/toolbar"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatroom_list_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tb"
         tools:listitem="@layout/itemchatlist" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

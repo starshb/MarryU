@@ -1,13 +1,17 @@
 package com.example.umarry.setting
 
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Build.VERSION_CODES
 import android.os.Build.VERSION_CODES.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.utils.FirebaseAuthUtils
@@ -26,16 +30,25 @@ import java.time.format.DateTimeFormatter
 class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyPageBinding
 //    private lateinit var tbinding: ToolbarBinding
+    private val uid = FirebaseAuthUtils.getUid()
+    val PICK_IMAGE_REQUEST = 2020
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyPageBinding.inflate(layoutInflater)
 //        tbinding = binding.tbPage
         setContentView(binding.root)
 
-        binding.tbMypage.visibility = View.GONE
-        binding.tbChatting.visibility = View.GONE
-        binding.tbTitle.text  = "<"
-        binding.tbTitle.setOnClickListener {
+        val myName = binding.myName
+        val myNickname = binding.myNickname
+        val myAge = binding.myAge
+        val myArea = binding.myArea
+        val myGender = binding.myGender
+        val myImg = binding.myImage
+        val myJob = binding.myJob
+        val myPassword = binding.myPassword
+        val myPasswordCH = binding.mypasswordCh
+
+        binding.backBtn.setOnClickListener {
             onBackPressed()
             overridePendingTransition(com.example.umarry.R.anim.slide_from_left, com.example.umarry.R.anim.slide_to_right)
         }
@@ -48,10 +61,57 @@ class MyPageActivity : AppCompatActivity() {
 //        }
 
         getMyData()
+//        setMyData()
+    }
+
+    private fun chooseImage(){
+        val intent = Intent()
+        intent.type = "image/"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent,"Select Image"),PICK_IMAGE_REQUEST)
+    }
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if(requestCode == PICK_IMAGE_REQUEST && resultCode != null){
+//            filePath = data!!.data
+//            try{
+//                val bitmap:Bitmap = MediaStore.Images.Media.getBitmap(contentResolver,filePath)
+//
+//            }
+//        }
+//    }
+
+    private fun setMyData(){
+        val myName = binding.myName
+        val myNickname = binding.myNickname
+        val myAge = binding.myAge
+        val myArea = binding.myArea
+        val myImg = binding.myImage
+        val myJob = binding.myJob
+        val myPassword = binding.myPassword
+        val myPasswordCH = binding.mypasswordCh
+        binding.checkbtn.setOnClickListener {
+            if(binding.checkbtn.text.equals("수정하기")) {
+                myName.isEnabled = true
+                myNickname.isEnabled = true
+                myAge.isEnabled = true
+                myArea.isEnabled = true
+                myJob.isEnabled = true
+                myPassword.isEnabled = true
+                myPasswordCH.isEnabled = true
+                myPassword.visibility = View.VISIBLE
+                myPasswordCH.visibility = View.VISIBLE
+                binding.checkbtn.text = "저장하기"
+            }else{
+                //todo db에 저장하기
+                //todo editText isEnabled = false로 바꾸기
+            }
+        }
     }
 
     private fun getMyData(){
-        val uid = FirebaseAuthUtils.getUid()
+
         val myName = binding.myName
         val myNickname = binding.myNickname
         val myAge = binding.myAge
@@ -59,6 +119,8 @@ class MyPageActivity : AppCompatActivity() {
         val myGender = binding.myGender
         val myImg = binding.myImage
         val myJob = binding.myJob
+        val myPassword = binding.myPassword
+        val myPasswordCH = binding.mypasswordCh
 
 
         val postListener = object : ValueEventListener {
@@ -72,12 +134,14 @@ class MyPageActivity : AppCompatActivity() {
                 val formatted = date.format(formatter)
                 val uid = FirebaseAuthUtils.getUid()
 
-                myName.text = data!!.name
-                myNickname.text = data!!.nickname
-                myAge.text = (formatted.toInt()-data.birth!!.substring(0,4).toInt()).toString()
-                myArea.text = data!!.bigArea +" "+ data!!.smallArea
-                myGender.text = data!!.gender
-                myJob.text = data!!.job
+                myName.setText(data!!.name)
+                myNickname.setText(data!!.nickname)
+                myAge.setText((formatted.toInt()-data.birth!!.substring(0,4).toInt()).toString())
+                myArea.setText(data!!.bigArea +" "+ data!!.smallArea)
+                myGender.setText(data!!.gender)
+                myJob.setText(data!!.job)
+
+
 
                 // mypage여서 현재 사용자의 uid를 get
                 val storageRef = Firebase.storage.reference.child(uid).child("01.png")
@@ -88,6 +152,8 @@ class MyPageActivity : AppCompatActivity() {
                             .into(myImg)
                     }
                 })
+
+
 
             }
 

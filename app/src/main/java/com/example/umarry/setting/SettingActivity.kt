@@ -105,11 +105,9 @@ class SettingActivity : AppCompatActivity() {
             BiometricManager.BIOMETRIC_SUCCESS -> {
                 return true
             }
-
             BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE, BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE, BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> {
                 return false
             }
-
             else -> {
                 return false
             }
