@@ -42,7 +42,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/topbar"
         android:layout_above="@id/message_view"
-        tools:listitem="@layout/itemchat"
+        tools:listitem="@layout/itemchat_left"
         />
 
     <RelativeLayout
@@ -68,6 +68,8 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:padding="8dp"
+                android:hint="Type Message"
+                android:textColor="@color/grey_700"
                 android:text="" />
 
             <ImageButton

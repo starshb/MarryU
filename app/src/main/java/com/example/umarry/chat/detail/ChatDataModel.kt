@@ -1,7 +1,7 @@
 package com.example.umarry.chat.detail
 
 class ChatDataModel (
-    var chatId: String? = null,
-    val uid: String? = null,
+    var senderId: String? = null,
+    val receiverId: String? = null,
     val message: String? = null,
 )
