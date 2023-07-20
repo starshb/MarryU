@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.databinding.ActivityChatListBinding
 import com.example.umarry.setting.MyPageActivity
@@ -33,9 +34,11 @@ class ChatListActivity : AppCompatActivity() {
 
         binding.backBtn.setOnClickListener {
             super.onBackPressed()
+            overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }
         binding.tbMypage.setOnClickListener {
             startActivity(Intent(this,SettingActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
         binding.chatroomListView.layoutManager = LinearLayoutManager(this,

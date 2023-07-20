@@ -11,6 +11,7 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.example.umarry.R
 import com.example.umarry.auth.LoginActivity
+import com.example.umarry.chat.ChatListActivity
 import com.example.umarry.databinding.ActivitySettingBinding
 import com.example.umarry.databinding.ToolbarBinding
 import com.example.umarry.message.MyLikeListActivity
@@ -59,10 +60,14 @@ class SettingActivity : AppCompatActivity() {
             }
         }
 
-        binding.tbTitle.text  = "<"
-        binding.tbTitle.setOnClickListener {
-            onBackPressed()
+        binding.backBtn.setOnClickListener {
+            super.onBackPressed()
             overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
+        }
+
+        binding.tbChatting.setOnClickListener {
+            startActivity(Intent(this,ChatListActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
     }
 
