@@ -44,7 +44,7 @@ Docker & Jenkins <br>
 FlingerPrint <br>
 <br>
 <br>
-<img width="50%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/8a21c2de-e72d-44f5-bfa3-53832a485136"/>
+<img width="30%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/8a21c2de-e72d-44f5-bfa3-53832a485136"/>
 
 
 <hr>
