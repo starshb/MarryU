@@ -5,9 +5,44 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
-        android:id="@+id/tb_matching"
-        layout="@layout/toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/pink_100"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tb_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matching"
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            />
+        <ImageView
+        android:id="@+id/tb_chatting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_chatting"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tb_mypage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@drawable/person_icon"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:padding="10dp" />
+    </LinearLayout>
 
     <com.yuyakaido.android.cardstackview.CardStackView
         android:id="@+id/cardstackview"

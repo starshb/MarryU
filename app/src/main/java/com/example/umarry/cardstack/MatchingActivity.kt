@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide
 import com.example.umarry.MainActivity
 import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
+import com.example.umarry.chat.ChatListActivity
 import com.example.umarry.databinding.ActivityMatchingBinding
 import com.example.umarry.databinding.ToolbarBinding
 import com.example.umarry.setting.SettingActivity
@@ -38,7 +39,6 @@ import java.time.format.DateTimeFormatter
 
 class MatchingActivity:AppCompatActivity() {
     private lateinit var binding: ActivityMatchingBinding
-    private lateinit var tbinding: ToolbarBinding
     lateinit var matchingAdapter: MatchingAdapter
     lateinit var manager: CardStackLayoutManager
     private val userDataList = mutableListOf<UserDataModel>()
@@ -49,10 +49,8 @@ class MatchingActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMatchingBinding.inflate(layoutInflater)
-        tbinding = binding.tbMatching
         setContentView(binding.root)
 
-        tbinding.tbTitle.text = "매칭"
         val cardStackView = binding.cardstackview
 
         manager = CardStackLayoutManager(baseContext, object : CardStackListener{
@@ -96,8 +94,13 @@ class MatchingActivity:AppCompatActivity() {
 
         })
 
-        tbinding.tbMypage.setOnClickListener {
+        binding.tbMypage.setOnClickListener {
             startActivity(Intent(this,SettingActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+        }
+
+        binding.tbChatting.setOnClickListener {
+            startActivity(Intent(this,ChatListActivity::class.java))
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 
@@ -207,7 +210,7 @@ class MatchingActivity:AppCompatActivity() {
             .setContentText("content")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
         with(NotificationManagerCompat.from(this)){
-            notify(123,builder.build())
+            notify(12,builder.build())
         }
     }
 
@@ -222,13 +225,9 @@ class MatchingActivity:AppCompatActivity() {
                         startActivity(Intent(this, MainActivity::class.java))
                     },250)
 
-//                    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
-//                    binding.textMain.text = "Chat"
                 }
                 R.id.nav_matching -> {
                     startActivity(Intent(this,MatchingActivity::class.java))
-//                    binding.textMain.text = "Profile"
-//                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
 
                 R.id.nav_store -> {

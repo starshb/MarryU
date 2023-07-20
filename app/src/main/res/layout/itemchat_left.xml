@@ -33,6 +33,7 @@
                 android:id="@+id/message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="250dp"
                 android:text="메시지"
                 android:textSize="16sp" />
 

@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
-                if(userDataList02.isEmpty()){
+                if(userDataList02==null){
                     Log.d("xxxxxxxmain_rcv02_null","rcv02Null")
                     val notext = findViewById<TextView>(R.id.rcv02_notext)
                     val rcv02 = findViewById<ImageView>(R.id.rcv02)
