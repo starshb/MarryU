@@ -1,97 +1,62 @@
 package com.example.umarry.chat
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
+import com.example.umarry.chat.detail.ChatActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import de.hdodenhof.circleimageview.CircleImageView
 
-class ChatListAdapter(private val context: Context, private val items: MutableList<ChatListDataModel>):RecyclerView.Adapter<ChatListAdapter.ViewHolder>(){
+class ChatListAdapter (private val context: Context, private val items: MutableList<UserDataModel>):
+    RecyclerView.Adapter<ChatListAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatListAdapter.ViewHolder {
-        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.itemchatlist,parent,false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.itemchatlist,parent,false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ChatListAdapter.ViewHolder, position: Int) {
         val item = items[position]
-        holder.usernickname.text = item.otherUserName
-        Glide.with(context).load(item.otherUserImage).into(holder.userimage)
+        holder.nickname.text = item.nickname.toString()
+        Glide.with(context).load(item.uid).placeholder(R.drawable.ic_person).into(holder.userimage)
 
-//        val storageRef = Firebase.storage.reference.child(data.otherUserId!!).child("01.png")
-//            storageRef.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
-//                if (task.isSuccessful) {
-//                    Glide.with(context)
-//                        .load(task.result)
-//                        .into(binding.userimage)
-//                }
-//            })
+        holder.layoutChatList.setOnClickListener{
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("otherUid",item.uid)
+            intent.putExtra("otherNickname",item.nickname)
+            context.startActivity(intent)
+        }
+
+        val storageRef = Firebase.storage.reference.child(item.uid!!).child("01.png")
+        storageRef.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
+            if(task.isSuccessful){
+                Glide.with(context)
+                    .load(task.result)
+                    .into(holder.userimage)
+            }
+        })
+
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    inner class ViewHolder(view:View) : RecyclerView.ViewHolder(view){
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val userimage = view.findViewById<CircleImageView>(R.id.userimage)
-        val usernickname = view.findViewById<TextView>(R.id.chatlist_nickname)
+        val nickname = view.findViewById<TextView>(R.id.chatlist_nickname)
         val lastmessage = view.findViewById<TextView>(R.id.lastmessage)
+        val layoutChatList = view.findViewById<LinearLayout>(R.id.layoutChatList)
+
     }
 
 }
-
-//class ChatListAdapter(val context: Context,private val onClick: (ChatListDataModel) -> Unit) : ListAdapter<ChatListDataModel, ChatListAdapter.ViewHolder>(differ) {
-//
-//    inner class ViewHolder(private val binding: ItemchatlistBinding) :
-//        RecyclerView.ViewHolder(binding.root) {
-//
-//        fun bind(data: ChatListDataModel) {
-//            val storageRef = Firebase.storage.reference.child(data.otherUserId!!).child("01.png")
-//            storageRef.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
-//                if (task.isSuccessful) {
-//                    Glide.with(context)
-//                        .load(task.result)
-//                        .into(binding.userimage)
-//                }
-//            })
-//            binding.chatlistNickname.text = data.otherUserName
-//            binding.lastmessage.text = data.lastMessage
-//
-//            binding.root.setOnClickListener {
-//                onClick(data)
-//            }
-//        }
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        return ViewHolder(
-//            ItemchatlistBinding.inflate(
-//                LayoutInflater.from(parent.context),
-//                parent,
-//                false
-//            )
-//        )
-//    }
-//
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.bind(currentList[position])
-//    }
-//
-//    companion object {
-//        val differ = object : DiffUtil.ItemCallback<ChatListDataModel>() {
-//            override fun areItemsTheSame(oldItem: ChatListDataModel, newItem: ChatListDataModel): Boolean {
-//                return oldItem.chatRoomId == newItem.chatRoomId
-//            }
-//
-//            @SuppressLint("DiffUtilEquals")
-//            override fun areContentsTheSame(oldItem: ChatListDataModel, newItem: ChatListDataModel): Boolean {
-//                return oldItem == newItem
-//            }
-//
-//        }
-//    }
-//}

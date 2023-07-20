@@ -10,12 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.umarry.R
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.databinding.ActivityChatListBinding
-import com.example.umarry.setting.MyPageActivity
 import com.example.umarry.setting.SettingActivity
 import com.example.umarry.utils.FirebaseAuthUtils
 import com.example.umarry.utils.FirebaseRef
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -64,7 +61,7 @@ class ChatListActivity : AppCompatActivity() {
                         }
                     }
                 }
-                val chatListAdapter = UserChatListAdapter(this@ChatListActivity,userChatList)
+                val chatListAdapter = ChatListAdapter(this@ChatListActivity,userChatList)
                 binding.chatroomListView.adapter = chatListAdapter
 
             }

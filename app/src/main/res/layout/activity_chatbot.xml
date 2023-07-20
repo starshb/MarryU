@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".chat.detail.ChatActivity">
+    tools:context=".chat.ChatbotActivity">
+
 
     <LinearLayout
         android:id="@+id/topbar"
@@ -26,7 +27,7 @@
             android:id="@+id/tb_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="하트"
             android:textSize="25sp"
             android:paddingHorizontal="10dp"
             android:textColor="@color/white"
@@ -35,13 +36,14 @@
             android:layout_weight="2"
             />
     </LinearLayout>
-    
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chat_view"
+        android:id="@+id/chatbot_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/topbar"
         android:layout_above="@id/message_view"
+        tools:listitem="@layout/itemchatbot"
         />
 
     <RelativeLayout
@@ -65,6 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:maxHeight="200dp"
                 android:background="@color/white"
                 android:padding="8dp"
                 android:hint="Type Message"

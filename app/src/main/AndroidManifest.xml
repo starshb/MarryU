@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Umarry"
         tools:targetApi="31">
         <activity
+            android:name=".chat.ChatbotActivity"
+            android:exported="false" />
+        <activity
             android:name=".chat.ChatListActivity"
             android:exported="true" />
         <activity
