@@ -65,10 +65,6 @@ class SettingActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }
 
-        binding.tbChatting.setOnClickListener {
-            startActivity(Intent(this,ChatListActivity::class.java))
-            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
-        }
     }
 
     private fun showBiometricPrompt() {

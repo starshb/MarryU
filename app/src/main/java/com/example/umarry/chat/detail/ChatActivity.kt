@@ -3,45 +3,21 @@ package com.example.umarry.chat.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.umarry.R
-import com.example.umarry.auth.UserDataModel
-import com.example.umarry.chat.UserChatListAdapter
 import com.example.umarry.databinding.ActivityChatBinding
-import com.example.umarry.message.fcm.NotiModel
 import com.example.umarry.message.fcm.PushNotification
-import com.example.umarry.message.fcm.Repo
 import com.example.umarry.message.fcm.RetrofitInstance
 import com.example.umarry.utils.FirebaseAuthUtils
 import com.example.umarry.utils.FirebaseRef
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import org.json.JSONObject
-import java.io.IOException
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChatBinding
@@ -110,7 +86,7 @@ class ChatActivity : AppCompatActivity() {
     fun readChatList(senderId: String, receiverId: String?){
         FirebaseRef.chatRef.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-//                ChatList.clear()
+                ChatList.clear()
 
                 for(dataSnapShot:DataSnapshot in snapshot.children){
                     val chat = dataSnapShot.getValue(ChatDataModel::class.java)

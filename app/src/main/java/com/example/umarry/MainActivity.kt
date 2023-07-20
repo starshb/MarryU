@@ -2,7 +2,6 @@ package com.example.umarry
 
 import android.content.Intent
 import android.graphics.Rect
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,16 +13,13 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.view.isVisible
-import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.umarry.auth.UserDataModel
 import com.example.umarry.cardstack.MatchingActivity
 import com.example.umarry.chat.ChatListActivity
+import com.example.umarry.chat.ChatbotActivity
 import com.example.umarry.databinding.ActivityMainBinding
-import com.example.umarry.databinding.ToolbarBinding
 import com.example.umarry.recycler.RecyclerView01Adapter
 import com.example.umarry.recycler.RecyclerView02Adapter
 import com.example.umarry.recycler.RecyclerView03Adapter
@@ -41,7 +37,6 @@ import com.google.firebase.messaging.FirebaseMessaging
 //전화번호, 이메일 유니크
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
-//    private lateinit var tbinding : ToolbarBinding  //include Layout 바인딩
     private var isExpanded = false
     lateinit var rcv01Adapter : RecyclerView01Adapter
     lateinit var rcv02Adapter : RecyclerView02Adapter
@@ -52,7 +47,6 @@ class MainActivity : AppCompatActivity() {
     private val uid = FirebaseAuthUtils.getUid()
     private lateinit var currentUserGender: String
     private lateinit var currentUserArea: String
-
 
     private val fromBottomFabAnim: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.from_bottom_fab)
@@ -76,10 +70,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-//        tbinding = binding.tbMain
         setContentView(binding.root)
         supportActionBar?.setTitle("") // 제목없음설정
-//        actionBar?.show()
         val user = Firebase.auth.currentUser
         Log.d("MAINxxxxx uid",uid)
 
@@ -112,7 +104,6 @@ class MainActivity : AppCompatActivity() {
         binding.rcv03.adapter = rcv03Adapter
 
 
-
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel(R.drawable.ppl_01))
@@ -137,6 +128,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.chatbotTv.setOnClickListener {
             onchatbotClicked()
+        }
+
+        binding.settingFabBtn.setOnClickListener {
+            onsettingClicked()
+        }
+
+        binding.settingTv.setOnClickListener {
+            onsettingClicked()
         }
 
         binding.bottomNavBar.setItemSelected(R.id.nav_home,true)
@@ -229,7 +228,12 @@ class MainActivity : AppCompatActivity() {
 
     /*-------------floating button*/
     private fun onchatbotClicked() {
-        Toast.makeText(this, "Chatbot Clicked", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this,ChatbotActivity::class.java))
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+    }
+    private fun onsettingClicked() {
+        startActivity(Intent(this,SettingActivity::class.java))
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
     }
 
     private fun shrinkFab() {
@@ -286,7 +290,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> {
                     startActivity(Intent(this,MainActivity::class.java))
 //                    return@setOnItemSelectedListener true
-//                    binding.textMain.text = "Chat"
                 }
 
                 R.id.nav_matching -> {
@@ -294,13 +297,10 @@ class MainActivity : AppCompatActivity() {
                         startActivity(Intent(this,MatchingActivity::class.java))
                     },250)
 
-//                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
-//                    binding.textMain.text = "Profile"
 //                     binding.bottomNavBar.showBadge(R.id.nav_settings)
                 }
 
                 R.id.nav_store -> {
-//                    binding.textMain.text = "Settings"
 //                     binding.bottomNavBar.dismissBadge(R.id.nav_settings)
                 }
             }
