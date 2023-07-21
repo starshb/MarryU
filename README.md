@@ -37,7 +37,8 @@ Docker & Jenkins
 Docker & Jenkins <br>
 <br>
 <br>
-<img width="50%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/3c29309b-6b47-4470-88ca-63e1de51643a"/>
+<img width="50%" src="https://github.com/starshb/umarry/assets/138543543/e78bbbd7-bf35-4351-9a2e-93431adb346c"/>
+
 
 
 <hr>
