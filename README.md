@@ -52,6 +52,6 @@ FlingerPrint <br>
 Chatting <br>
 <br>
 <br>
-<img width="30%" src="https://github.com/gksgpwls0306/umarry/assets/138543543/dbd87543-ea47-436d-b4ee-e0742dc9b137"/>
+<img width="30%" src="https://github.com/gksgpwls0306/umarry/assets/65875927/16d45b75-e9b4-43be-8a68-3e7e5e8f5a68"/>
 
 
