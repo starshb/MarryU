@@ -55,7 +55,3 @@ Chatting <br>
 <img width="30%" src="https://github.com/gksgpwls0306/umarry/assets/65875927/16d45b75-e9b4-43be-8a68-3e7e5e8f5a68"/>
 
 
-
-
-
-
